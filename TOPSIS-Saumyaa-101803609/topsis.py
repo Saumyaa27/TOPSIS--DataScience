@@ -90,5 +90,5 @@ def topsis(file, weight, impact, outputfile):
     df['sum'] = df['s0'] + df['s1']
     df1['TOPSIS score'] = df['s1'] / df['sum']
     df1["Rank"] = df1['TOPSIS score'].rank(ascending=False)
-    df1.to_csv(outputfile + '.csv')
+    df1.to_csv(outputfile)
     return 0
