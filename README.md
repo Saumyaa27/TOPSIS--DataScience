@@ -1,17 +1,17 @@
-# TOPSIS-Python
+### TOPSIS-Python
 
-## What is TOPSIS
+### What is TOPSIS
 
 The Technique for Order of Preference by Similarity to Ideal Solution is a multi-criteria decision analysis method.It is a method of compensatory aggregation that compares a set of alternatives by identifying weights for each criterion, normalising scores for each criterion and calculating the geometric distance between each alternative and the ideal alternative, which is the best score in each criterion
 
 <br>
-## How to install this package:
+### How to install this package:
 visit https://pypi.org/project/TOPSIS-Saumyaa-101803609/0.0.8/  <br>
 or run: <br>
 pip install TOPSIS-Saumyaa-101803609==0.0.8  <br>
 on your command line <br>
 <br>
-## How to use this package:
+### How to use this package:
 
 TOPSIS-Saumyaa-101803609 can be run as in the following example:
 
