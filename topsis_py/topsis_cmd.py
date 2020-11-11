@@ -1,5 +1,10 @@
-def topsis(file, weight, impact, outputfile):
-    ''' 
+import pandas as pd
+import math
+import numbers
+import sys
+from statistics import mean
+def topsis():
+    '''
     :param file (.csv): input csv file which contains 3 or more columns such that column 1 is the variable name,column 2 to n are numeric,
     :param weight (string): weight of each column
     :param impact (string): can be '+' or '-' where '+' means max is best and '-' means min is best
@@ -14,6 +19,10 @@ def topsis(file, weight, impact, outputfile):
             7)Calculate Performance Score (topsis score).
             8)Rank according to performance score ( Highest= Rank 1)
     '''
+    file = sys.argv[1]
+    weight = sys.argv[2]
+    impact = sys.argv[3]
+    outputfile = sys.argv[4]
     try:
         df = pd.read_csv(file)
     except FileNotFoundError:

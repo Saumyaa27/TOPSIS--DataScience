@@ -1,43 +1,33 @@
-# TOPSIS-Python
-
-**Subject : UCS538**
-Assignment 6
-
-
-Submitted By: **Saumyaa Mathur 101803609**
-
-***
-
-## What is TOPSIS
-
+What is TOPSIS?
 The Technique for Order of Preference by Similarity to Ideal Solution is a multi-criteria decision analysis method.It is a method of compensatory aggregation that compares a set of alternatives by identifying weights for each criterion, normalising scores for each criterion and calculating the geometric distance between each alternative and the ideal alternative, which is the best score in each criterion
 
-<br>
-
-## How to use this package:
+How to use this package:
 
 TOPSIS-Saumyaa-101803609 can be run as in the following example:
 
 Usages:
-python topsis \<InputDataFile\> \<Weights\> \<Impacts\> \<ResultFileName\>
-  <br>
+python topsis <InputDataFile> <Weights> <Impacts> <ResultFileName>
+
 Example:
 python topsis inputfile.csv “1,1,1,2” “+,+,-,+” result.csv
 
-### In Command Prompt
+In Command Prompt:
 ```
->> topsis_cmd data.csv "1,1,1,1" "+,+,-,+" result.csv
+>> python topsis data.csv "1,1,1,1" "+,+,-,+" result.csv
 ```
-<br>
 
-### In Python IDLE:
+In Python IDLE:
 from topsis_py.topsis import topsis
-<br>
 topsis('data.csv','1,1,2,2','+,+,-,+','result.csv')
 
-<br>
+Constraints:
+•Input file must contain three or more columns.
+• From 2nd to last columns must contain numeric values only (Handling of non-numeric values)
+• Number of weights, number of impacts and number of columns (from 2nd to last columns) must be same.
+• Impacts must be either +ve or -ve.
+• Impacts and weights must be separated by ‘,’(comma).
 
-## Sample dataset (.csv)
+Sample dataset (.csv)
 
 Model | Correlation | R<sup>2</sup> | RMSE | Accuracy
 ------------ | ------------- | ------------ | ------------- | ------------
@@ -47,7 +37,6 @@ M3 |	0.56 | 0.31	| 1.57 | 62.87
 M4 |	0.82 | 0.67	| 2.68 | 70.19
 M5 |	0.75 | 0.56	| 1.3	 | 80.39
 
-<br>
 
 ## Output file (.csv)
 
@@ -59,4 +48,25 @@ M3 |	0.56 | 0.31	| 1.57 | 62.87 | 0.438897| 4
 M4 |	0.82 | 0.67	| 2.68 | 70.19 | 0.523878 | 3
 M5 |	0.75 | 0.56	| 1.3	 | 80.39 | 0.811389 | 1
 
-<br>
+Error handling:
+Error: File not found!!   
+-> Wrong file name given
+
+Error:inappropriate no of columns
+-> Number of columns are less than 3
+
+Error:wrong separator
+-> Weights or Impacts separated by a separator other than comma(,)
+
+Error:unequal weights or impacts or columns OR wrong separator
+-> Number of weights, impacts and number of numeric columns are different
+
+Error:non numeric weights
+->Weights are not of any numeric datatype
+
+Error:impact is neither +ve nor -ve
+->Impacts are not '+' or '-'
+
+Function returns -1 if any of these errors occur. 
+On success, a . csv file containing the Topsis score and rank is created.
+ 
